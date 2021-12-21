@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <router-link to="/1">
+      <div class="start">START</div>
+  </router-link> 
 </template>
 
 <script>
@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.start{
+  padding: 15px;
+}
+</style>
