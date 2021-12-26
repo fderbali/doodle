@@ -9,12 +9,13 @@
         
         :after {
             content: "";
-            @size: @r(20%, 50%);
+            @size: @r(50%, 90%);
             border-radius: 50%;
             background: radial-gradient(circle at @r(100%) @r(100%), #FFEBC2 0% 50%, #FFB600 50% 100%);
             display: @pick(none, unset);
             transform: translateX(@r(-30%, -60%));
-            animation: floatAnim @r(1s, 1.5s) @r(1.5s) infinite alternate ease-in-out;
+            animation: floatAnim @r(0.3s, 0.35s) @r(1.5s) infinite alternate ease-in-out;
+            z-index:100;
         }
         
         @keyframes floatAnim {
@@ -26,11 +27,13 @@
 </template>
 
 <script>
+import router from "@/router";
 export default {
-    name: 'DoodleUn',
+    mounted(){
+        setTimeout(()=>{
+            let n = Math.floor(Math.random() * 10) + 1;
+            router.push({ name: `${n}` });
+        },5000);
+    }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
